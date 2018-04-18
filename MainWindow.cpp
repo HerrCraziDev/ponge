@@ -3,7 +3,7 @@
 MainWindow::MainWindow() : QMainWindow()
 {
     main_container = new QWidget();
-    main_container->setMinimumSize(610,410);
+    main_container->setMinimumSize(800,600);
     QLayout *main_layout = new QVBoxLayout();
     main_layout->setMargin(0);
     

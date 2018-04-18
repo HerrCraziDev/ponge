@@ -5,8 +5,8 @@ Ball::Ball(float x, float y, int radius) : bx(x), by(y)
     srand(time(NULL));
     //std::cout << rand();
 
-    vx = (rand()%10) - 1;
-    vy = (rand()%10) - 1;
+    vx = (rand()%1000)/100 - 1;
+    vy = (rand()%1000)/100 - 1;
 
     std::cout << "\nvx : " << vx << ", vy : " << vy << "\nx : " << bx << ", y : " << y << "\n-------------------------\n";
 }

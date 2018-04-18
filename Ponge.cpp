@@ -1,6 +1,6 @@
 #include "Ponge.hpp"
 
-Ponge::Ponge(QWidget *parent) : QGraphicsScene(parent), ball(50,50), leftPaddle(this, 1), rightPaddle(this, 2), leftPlayer(1, leftPaddle), rightPlayer(2, rightPaddle)
+Ponge::Ponge(QWidget *parent) : QGraphicsScene(parent), ball(BOARD_WIDTH/2 - 10, BOARD_HEIGHT/2 - 10), leftPaddle(this, 1), rightPaddle(this, 2), leftPlayer(1, leftPaddle), rightPlayer(2, rightPaddle)
 {
     this->setBackgroundBrush(Qt::black);
 
@@ -16,6 +16,7 @@ Ponge::Ponge(QWidget *parent) : QGraphicsScene(parent), ball(50,50), leftPaddle(
 
     /*QGraphicsEllipseItem *maboule = new QGraphicsEllipseItem(50,50,10,10);
     maboule->setBrush(Qt::white);*/
+
     i_ball = new QGraphicsEllipseItem(0,0,20,20);
     i_ball->setBrush(Qt::white);
     i_ball->setPos(BOARD_WIDTH/2 - 10, BOARD_HEIGHT/2 - 10);
