@@ -3,4 +3,5 @@
 #define BOARD_WIDTH 600
 #define PADDLE_HEIGTH 60
 #define PADDLE_WIDTH 10
+#define PADDLE_SPEED 4
 #define FT_SCORE_SIZE 30

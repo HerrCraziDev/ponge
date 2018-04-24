@@ -24,9 +24,9 @@ public:
     ~Ponge();
 
     virtual void keyPressEvent(QKeyEvent *event);
-    
+    virtual void keyReleaseEvent(QKeyEvent *event);
 
-public slots : 
+  public slots: 
     void update();
 
 

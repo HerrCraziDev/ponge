@@ -3,6 +3,7 @@
 
 #include <QGraphicsScene>
 #include <QGraphicsRectItem>
+#include <QDebug>
 //#include "Player.hpp"
 #include "Ball.hpp"
 #include "constants.hpp"
@@ -13,23 +14,37 @@ class Paddle
 public:
   Paddle(QGraphicsScene *scene, int pID = 1);
 
-  bool collideLeft(Ball &ball);
-  bool collideRight(Ball &ball);
-  bool collideUp(Ball &ball);
-  bool collideDown(Ball &ball);
-  bool collideHorizontalSide(Ball &ball);
-  bool collideVerticalSide(Ball &ball);
+  int x() { return paddle->x(); }
+  int y() { return paddle->y(); }
+  int h() { return PADDLE_HEIGTH; }
+  int w() { return PADDLE_WIDTH; }
 
-  void moveUp(int dep = 1);
-  void moveDown(int dep = 1);
+  bool collide(QGraphicsEllipseItem *ball, QGraphicsLineItem *collider);
+  bool collideLeft(QGraphicsEllipseItem *q_ball);
+  bool collideRight(QGraphicsEllipseItem *q_ball);
+  bool collideUp(QGraphicsEllipseItem *q_ball);
+  bool collideDown(QGraphicsEllipseItem *q_ball);
+  bool collideHorizontalSide(QGraphicsEllipseItem *q_ball);
+  bool collideVerticalSide(QGraphicsEllipseItem *q_ball);
+
+  void moveUp(int delta = 1);
+  void moveDown(int delta = 1);
+
+  void brake();
+
+  void update();
 
 private:
     QGraphicsRectItem *paddle;
 
-    QGraphicsLineItem *UL_collision;
-    QGraphicsLineItem *DL_collision;
-    QGraphicsLineItem *UR_collision;
-    QGraphicsLineItem *DR_collision;
+    QGraphicsLineItem *upCollision;
+    QGraphicsLineItem *downCollision;
+    QGraphicsLineItem *leftCollision;
+    QGraphicsLineItem *rightCollision;
+
+    float velocity = 0;
+
+    bool hasCollided = false;
 };
 
 #endif

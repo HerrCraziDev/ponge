@@ -3,11 +3,14 @@
 MainWindow::MainWindow() : QMainWindow()
 {
     main_container = new QWidget();
-    main_container->setMinimumSize(800,600);
+    main_container->setMinimumSize(600,400);
     QLayout *main_layout = new QVBoxLayout();
     main_layout->setMargin(0);
     
-    main_container->setPalette(QPalette(Qt::black));
+    /*QPalette pal(Qt::black);
+    pal.setBrush(QPalette::Window, QBrush(QImage("assets/textures/ponge_menubk.png")));
+
+    main_container->setPalette(pal);*/
     main_container->setLayout(main_layout);
 
     this->setCentralWidget(main_container);
